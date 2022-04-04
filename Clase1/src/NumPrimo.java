@@ -1,11 +1,26 @@
-public class NumPrimo {
-    int num, primo, divisor = 2;
+import java.util.Scanner;
 
-    public NumPrimo(int numero){
-        this.num = numero;
-    }
+public class NumPrimo {
+    int num, primo, flag, divisor = 2;
+    Scanner entrada = new Scanner(System.in);
+
+
 
     public void EsPrimo(){
+
+        do{
+            System.out.print("Ingrese un numero del 1 al 14: ");
+            num = entrada.nextInt();
+            System.out.println();
+
+            if(num < 1 || num > 14){
+                System.out.println("El numero ingresado es incorrecto.");
+                flag=0;
+            }else{
+                flag=1;
+            }
+        }while(flag==0);
+
         if(num == 0 || num == 1 || num == 2){
             primo = 0;
         }
