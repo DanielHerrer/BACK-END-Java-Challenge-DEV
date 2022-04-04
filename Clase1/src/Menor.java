@@ -20,6 +20,7 @@ public class Menor {
 
         //Asignamos el primer valor del arreglo para tener un parametro
         menor = valor1;
+
         //Luego recorremos el arreglo
         for(int i=0;i<numeros.length;i++){
             if(menor>numeros[i]){

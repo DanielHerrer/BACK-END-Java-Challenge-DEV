@@ -9,7 +9,6 @@ public class MasaCorporal {
         alturaCm = entrada.nextDouble();
         System.out.println();
 
-
         System.out.print("Ingrese su peso [Ejemplo= 68 (kg)]: ");
         peso = entrada.nextDouble();
         System.out.println();

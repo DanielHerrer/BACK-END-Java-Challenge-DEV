@@ -11,7 +11,7 @@ public class Capicua {
 
         int cantidadC = numero1.length() - 1;
 
-        while(cantidadC>=0){
+        while(cantidadC >= 0){
             numero2 += (numero1.charAt(cantidadC));
             cantidadC--;
         }

@@ -23,10 +23,10 @@ public class Promedio {
         if (promedio<10){
             System.out.println("Usted ha REPROBADO");
 
-        }else if(promedio>=10 && promedio<15){
+        }else if(promedio >= 10 && promedio<15){
             System.out.println("Usted ha APROBADO");
 
-        }else if(promedio>=15){
+        }else if(promedio >= 15){
             System.out.println("Usted ha quedado EXIMIDO");
         }
 
