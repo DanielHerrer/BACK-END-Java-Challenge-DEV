@@ -1,5 +1,5 @@
 public class Triangulo {
-    int tipo, A, B, C;
+    private int tipo, A, B, C;
 
     public Triangulo(int A,int B,int C){
         this.A = A;
@@ -7,7 +7,7 @@ public class Triangulo {
         this.C = C;
     }
 
-    public QuienSoy(){
+    public void QuienSoy(){
         if(A==B && B==C){
             tipo = 1;
         }else if(A==B || B==C || A==C){
