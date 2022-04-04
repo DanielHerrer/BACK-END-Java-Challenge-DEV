@@ -3,9 +3,7 @@ import java.util.Scanner;
 public class NumPrimo {
     int num, primo, flag, divisor = 2;
     Scanner entrada = new Scanner(System.in);
-
-
-
+    
     public void EsPrimo(){
 
         do{
