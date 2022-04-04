@@ -2,15 +2,13 @@ package pairProgram;
 import java.util.Scanner;
 
 public class Auto {
-    
+
     //ATRIBUTOS
-    private String marca;
-    private String modelo;
-    private String año;
-    private int papeles;
-    private int cantRuedas;
-    private int kmRealizados;
-    private int cantServiceHechos;
+    private String marca, modelo, año;
+    private int papeles, cantRuedas, kmRealizados, cantServiceHechos;
+    private int ;
+    private int ;
+    private int ;
     private String marcaAceite;
 
     //CONSTRUCTOR
@@ -49,7 +47,7 @@ public class Auto {
         }
         return service;
     }
-
+    
     public static void realizarService(int cant,String marca){
         Scanner teclado = new Scanner(System.in);
         String marcaAux;
@@ -58,9 +56,9 @@ public class Auto {
         cant=cant+1;
         marca=marcaAux;
         System.out.println("El service se realizo correctamente!");
-
     }
 
+    //informa el estado del coche y sus atributos
     public static void informarAuto(Auto auto)
     {
         System.out.println("MARCA vehiculo: "+auto.getMarca());
@@ -72,14 +70,16 @@ public class Auto {
         System.out.println("MARCA DE ULTIMO ACEITE CAMBIADO: "+auto.getMarca());
     }
 
-    public boolean verifPapeles(){
+    //verifica si posee papeles
+    public boolean verifPapeles(int papeles){
         if(papeles == 1){
             return true;
-        } else if(papeles == 2){
+        } else if(papeles == 0){
             return false;
         }
     }
 
+    //verifica la cantidad de aceite
     public void verifAceite(int cantAceite){
         if(cantAceite>=80){
             System.out.println("Aceite al "+cantAceite+"%, lleno o casi lleno.");
@@ -94,6 +94,7 @@ public class Auto {
         }
     }
 
+    //verifica el estado de cada rueda
     public void verifRuedas(){
         Integer kmPromedio, kmTotal, kmRueda, unaXuna = 1;
         Scanner entrada = new Scanner(System.in);
