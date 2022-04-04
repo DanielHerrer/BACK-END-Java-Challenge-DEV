@@ -14,10 +14,11 @@ public class MasaCorporal {
         peso = entrada.nextDouble();
         System.out.println();
 
+        //Pasa de centimetros a metros
         double alturaMt = alturaCm / 100;
         double imc = peso / (alturaMt * alturaMt);
 
-        System.out.println("alturaMt= "+alturaMt+" alturaCm= "+alturaCm+" IMC: "+ imc);
+        System.out.println("IMC: "+ imc);
 
         if(imc < 20){
             System.out.println("Mal estado");

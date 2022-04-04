@@ -27,6 +27,6 @@ public class Menor {
             }
         }
 
-        System.out.print("El valor numerico mas bajo es: "+menor);
+        System.out.println("El valor numerico mas bajo es: "+menor);
     }
 }
