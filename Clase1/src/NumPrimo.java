@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class NumPrimo {
-    int num, primo, flag, divisor = 2;
+    int num, flag, primo = 0, divisor = 2;
     Scanner entrada = new Scanner(System.in);
-    
+
     public void EsPrimo(){
 
         do{
@@ -19,7 +19,7 @@ public class NumPrimo {
             }
         }while(flag==0);
 
-        if(num == 0 || num == 1 || num == 2){
+        if(num == 1 || num == 2){
             primo = 0;
         }
 
@@ -36,6 +36,8 @@ public class NumPrimo {
                 break;
             case 1:
                 System.out.println("El numero SI es primo.");
+                break;
+            default:
                 break;
         }
 
