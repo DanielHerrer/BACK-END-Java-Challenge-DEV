@@ -1,22 +1,18 @@
+//Pair Programming: Sebastian Chamorro / Daniel Herrera
 package pairProgram;
 import java.util.Scanner;
 
 public class Auto {
 
     //ATRIBUTOS
-    private String marca, modelo, año;
-    private int papeles, cantRuedas, kmRealizados, cantServiceHechos;
-    private int ;
-    private int ;
-    private int ;
-    private String marcaAceite;
+    private String marca, marcaAceite, modelo, año, papeles;
+    private int cantRuedas, kmRealizados, cantServiceHechos;
 
     //CONSTRUCTOR
-    public Auto(String marca, String modelo, String año,int papeles, int cantRuedas, int kmRealizados, int cantServiceHechos, String marcaAceite) {
+    public Auto(String marca, String modelo, String año, int cantRuedas, int kmRealizados, int cantServiceHechos, String marcaAceite) {
         this.marca = marca;
         this.modelo = modelo;
         this.año = año;
-        this.papeles = papeles;
         this.cantRuedas = cantRuedas;
         this.kmRealizados = kmRealizados;
         this.cantServiceHechos = cantServiceHechos;
@@ -34,73 +30,71 @@ public class Auto {
     }
 
     //METODOS
-    //verifica si tiene realizado el ultimo service correspondiente
-    public static boolean verificarService(int km,int cant){
-        int num=0;
-        boolean service=false;
-        num=km/5000;
-        if (num==cant)
-        {System.out.println("Su auto tiene todos su services correspondientes!");
-            service=true;}
-        else {
-            System.out.println("Su auto le falta realizar un service!");
+
+    //Verifica si tiene realizado el ultimo service correspondiente
+    public boolean verificarService(int km, int cant) {
+        int num = 0;
+        boolean service = false;
+        num = km / 5000;
+        if (num == cant) {
+            service = true;
         }
         return service;
     }
-    
-    public static void realizarService(int cant,String marca){
+
+    public void realizarService(int cant, String mAceite) {
         Scanner teclado = new Scanner(System.in);
         String marcaAux;
-        System.out.println("Ingrese la marca de aceite a cambiar");
-        marcaAux= teclado.nextLine();
-        cant=cant+1;
-        marca=marcaAux;
+        System.out.println("Ingrese la marca de aceite a cambiar: ");
+        marcaAux = teclado.nextLine();
+        setMarcaAceite(marcaAux);
+        setCantServiceHechos(cant++);
         System.out.println("El service se realizo correctamente!");
+        System.out.println();
     }
 
-    //informa el estado del coche y sus atributos
-    public static void informarAuto(Auto auto)
-    {
-        System.out.println("MARCA vehiculo: "+auto.getMarca());
-        System.out.println("MODELO: "+auto.getModelo());
-        System.out.println("AÑO: "+auto.getAño());
-        System.out.println("PAPELES: "+auto.verifPapeles());
-        System.out.println("KILOMETROS REALIZADOS: "+auto.getKmRealizados());
-        System.out.println("CANTIDAD DE SERVICE REALIZADOS: "+auto.getCantServiceHechos());
-        System.out.println("MARCA DE ULTIMO ACEITE CAMBIADO: "+auto.getMarca());
+    public  void informarAuto(Auto auto) {
+        System.out.println("MARCA vehiculo: " + auto.getMarca());
+        System.out.println("MODELO: " + auto.getModelo());
+        System.out.println("AÑO: " + auto.getAño());
+        System.out.println("KILOMETROS REALIZADOS: " + auto.getKmRealizados());
+        System.out.println("CANTIDAD DE SERVICE REALIZADOS: " + auto.getCantServiceHechos());
+        System.out.println("MARCA DE ULTIMO ACEITE CAMBIADO: " + auto.getMarcaAceite());
     }
 
-    //verifica si posee papeles
-    public boolean verifPapeles(int papeles){
-        if(papeles == 1){
-            return true;
-        } else if(papeles == 0){
-            return false;
+    //Verifica si posee papeles
+    public void verificarPapeles(String papeles){
+        if(papeles.equals("y")){
+            System.out.println("Posee papeles.");
+        } else if(papeles.equals("n")){
+            System.out.println("No posee papeles.");
+        } else {
+            System.out.println("Error.");
         }
     }
 
-    //verifica la cantidad de aceite
-    public void verifAceite(int cantAceite){
-        if(cantAceite>=80){
+    //Verifica la cantidad de aceite
+    public void verificarAceite(int cantAceite){
+        if(cantAceite >= 80){
             System.out.println("Aceite al "+cantAceite+"%, lleno o casi lleno.");
-        }else if(cantAceite =< 79 || cantAceite >= 50){
+        }else if(cantAceite >= 50){
             System.out.println("Aceite al "+cantAceite+"%, posee una cantidad suficiente.");
-        }else if(cantAceite =< 49 || cantAceite >= 20){
+        }else if(cantAceite >= 20){
             System.out.println("Aceite al "+cantAceite+"%, por debajo de la mitad.");
-        }else if(cantAceite =< 29 || cantAceite >= 1){
+        }else if(cantAceite >= 1){
             System.out.println("Aceite al "+cantAceite+"%, es necesario rellenar.");
-        }else if(cantAceite>1){
+        }else if(cantAceite == 0){
             System.out.println("Aceite vacio.");
         }
     }
 
-    //verifica el estado de cada rueda
-    public void verifRuedas(){
-        Integer kmPromedio, kmTotal, kmRueda, unaXuna = 1;
+    //Verifica el estado de cada rueda
+    public void verificarRuedas(){
+        int kmPromedio, kmRueda, kmTotal = 0, rueda = 1;
         Scanner entrada = new Scanner(System.in);
 
         do {
-            System.out.print("Cual es la cantidad de km realizados en la rueda N°"+unaXuna+" desde el último cambio: ");
+            System.out.println("Cual es la cantidad de km realizados en la rueda N°"+rueda+" desde el último cambio: ");
             kmRueda = entrada.nextInt();
             if(kmRueda>=15000){
                 System.out.println("La rueda requiere mantenimiento.");
@@ -109,14 +103,15 @@ public class Auto {
             }
             kmTotal += kmRueda;
             System.out.println("");
-            unaXuna ++;
-        }while(unaXuna <= 4);
+            rueda ++;
+        }while(rueda <= cantRuedas);
 
-        kmPromedio = kmTotal / 4;
+        kmPromedio = kmTotal / cantRuedas;
         System.out.println("Usted tiene un promedio de "+ kmPromedio +" km. realizados en sus ruedas.");
     }
 
     //GETTERS & SETTERS
+
     public String getMarca() {
         return marca;
     }
@@ -174,3 +169,4 @@ public class Auto {
     }
 
 }
+
