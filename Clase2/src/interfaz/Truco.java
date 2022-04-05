@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Truco implements RepartirCartas {
     Scanner scan = new Scanner(System.in);
-    int jugadores, cantCartas = 50;
+    int jugadores, cantCartas = 40;
 
     @Override
     public void repartir() {
@@ -14,7 +14,7 @@ public class Truco implements RepartirCartas {
         System.out.println();
 
         int[] array = new int[jugadores];
-        int cartasReparto = jugadores * 5;
+        int cartasReparto = jugadores * 3;
 
         if (cartasReparto > cantCartas) {
             System.out.println("No alcanzan las cartas para los jugadores");
@@ -24,7 +24,7 @@ public class Truco implements RepartirCartas {
             }
         }
 
-        System.out.println("Manos en juego: " + Arrays.toString(array));
+        System.out.println("TRUCO - Manos en juego: " + Arrays.toString(array));
     }
 
 }

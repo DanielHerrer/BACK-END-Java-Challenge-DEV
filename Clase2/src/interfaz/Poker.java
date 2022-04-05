@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Poker implements RepartirCartas{
     Scanner scan = new Scanner(System.in);
-    int jugadores, cantCartas = 50;
+    int jugadores, cantCartas = 52;
 
     @Override
     public void repartir(){
@@ -24,7 +24,7 @@ public class Poker implements RepartirCartas{
             }
         }
 
-        System.out.println("Manos en juego: " + Arrays.toString(array));
+        System.out.println("POKER - Manos en juego: " + Arrays.toString(array));
     }
 
 }
