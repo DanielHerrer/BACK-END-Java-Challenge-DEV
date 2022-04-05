@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class ComparadorNum {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int idPair = 0, idOdd = 0, numBigger, numLower, numA, numB;
+        int idPair = 0, idOdd = 0, capP=0, capO=0, numBigger, numLower;
         int[] array = new int[10];
 
         //SE INGRESAN LOS 10 NUMEROS
@@ -13,13 +13,18 @@ public class ComparadorNum {
         for (int i = 0; i < array.length; i++) {
             System.out.print("Number " + (i + 1) + ": ");
             array[i] = scan.nextInt();
+            if ((array[i] % 2) == 0) {
+                capP++;
+            }else if ((array[i] % 2) != 0) {
+                capO++;
+            }
         }
 
         //SE TOMA EL PRIMER VALOR PARA COMPARAR, SE CREAN DOS ARRAYS APARTE
         numBigger = array[0];
         numLower = array[0];
-        int[] arrayP = new int[10];
-        int[] arrayO = new int[10];
+        int[] arrayP = new int[capP];
+        int[] arrayO = new int[capO];
 
         //LUEGO RECORRE EL ARREGLO ORIGINAL Y TOMA LOS DATOS
         for (int i = 0; i < array.length; i++) {
@@ -41,30 +46,32 @@ public class ComparadorNum {
 
         System.out.println("Show the biggest number: " + numBigger);
         System.out.println("Show the lowest number: " + numLower);
-            System.out.println("Show pair numbers: " + Arrays.toString(arrayP));
-            System.out.println("Show odd numbers: " + Arrays.toString(arrayO));
+        System.out.println("Show pair numbers: " + Arrays.toString(arrayP));
+        System.out.println("Show odd numbers: " + Arrays.toString(arrayO));
 
-            //ORDENARLOS DE MENOR A MAYOR
-            for (int i = 0; i < array.length; i++) {
-                numA = array[i];
-                numB = array[i + 1];
-                if (numA > numB) {
-                    array[i] = numB;
-                    array[i + 1] = numA;
+        //ORDENAMIENTO DE MENOR A MAYOR - METODO BURBUJA
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] < array[j]) {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
                 }
             }
-            System.out.println("Sort them in ascending order: " + Arrays.toString(array));
+        }
+        System.out.println("Sort them in ascending order: " + Arrays.toString(array));
 
-            //ORDENARLOS DE MAYOR A MENOR
-            for (int i = 0; i < array.length; i++) {
-                numA = array[i];
-                numB = array[i + 1];
-                if (numA < numB) {
-                    array[i] = numB;
-                    array[i + 1] = numA;
+        //ORDENAMIENTO DE MAYOR A MENOR - METODO BURBUJA
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
                 }
             }
-            System.out.println("Sort them descending: " + Arrays.toString(array));
+        }
+        System.out.println("Sort them descending: " + Arrays.toString(array));
 
     }
 }
