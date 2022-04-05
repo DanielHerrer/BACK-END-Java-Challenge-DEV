@@ -18,7 +18,7 @@ public class OrdenamientoLetras {
             }
         }
 
-        System.out.println("Show odd numbers: " + Arrays.toString(array));
+        System.out.println("Ordenado: " + Arrays.toString(array));
     }
 }
 
