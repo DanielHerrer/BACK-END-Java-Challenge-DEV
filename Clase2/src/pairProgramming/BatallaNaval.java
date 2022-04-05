@@ -1,3 +1,4 @@
+//Pair Programming: Misael Flores / Daniel Herrera
 package pairProgramming;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -6,7 +7,7 @@ public class BatallaNaval {
     private int x;
     private int y;
 
-    public  void ejecutarEj(){
+    public void ejecutarEj(){
         Scanner sc = new Scanner(System.in);
         int i,j;
         char rta = 's';
