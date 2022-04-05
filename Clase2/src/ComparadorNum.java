@@ -40,15 +40,15 @@ public class ComparadorNum {
         }
 
         System.out.println("Show the biggest number: " + numBigger);
-            System.out.println("Show the lowest number: " + numLower);
+        System.out.println("Show the lowest number: " + numLower);
             System.out.println("Show pair numbers: " + Arrays.toString(arrayP));
             System.out.println("Show odd numbers: " + Arrays.toString(arrayO));
 
             //ORDENARLOS DE MENOR A MAYOR
             for (int i = 0; i < array.length; i++) {
-                if (array[i] > array[i + 1]) {
-                    numA = array[i];
-                    numB = array[i + 1];
+                numA = array[i];
+                numB = array[i + 1];
+                if (numA > numB) {
                     array[i] = numB;
                     array[i + 1] = numA;
                 }
@@ -57,16 +57,14 @@ public class ComparadorNum {
 
             //ORDENARLOS DE MAYOR A MENOR
             for (int i = 0; i < array.length; i++) {
-                if (array[i] < array[i + 1]) {
-                    numA = array[i];
-                    numB = array[i + 1];
+                numA = array[i];
+                numB = array[i + 1];
+                if (numA < numB) {
                     array[i] = numB;
                     array[i + 1] = numA;
                 }
             }
             System.out.println("Sort them descending: " + Arrays.toString(array));
-
-
 
     }
 }
