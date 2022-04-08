@@ -1,34 +1,20 @@
 package herencia.fake.spotify;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class FakeSpotify{
-    static ArrayList<String> canciones = new ArrayList<String>();
+abstract public class FakeSpotify{
 
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+    public FakeSpotify(String usuario, ArrayList<String> songs) {
+        UsuarioPremium menPre = new UsuarioPremium();
         Usuario menUsu = new Usuario();
-        String usuario;
-        canciones.add("She dont give a fo");
-        canciones.add("Bad to the bones");
-        canciones.add("Lo malo de ser bueno");
 
-        System.out.println("Welcome to FakeSpotify, please type your user: ");
-        usuario = scan.nextLine();
-
-        menUsu.logIn(usuario);
-        boolean ok = menUsu.confirmation();
-        if(ok){
-            UsuarioPremium.listenSong();
+        if(menPre.confirmation(usuario)){
+            menPre.listenSong(songs);
+        } else if(menUsu.confirmation(usuario)){
+            menUsu.listenSong(songs);
         } else {
-            UsuarioEstandar.listenSong();
+            System.out.println("Your username is invalid.");
         }
 
     }
 
 }
-
-/*
-1) generar un "fake" spotify", donde tienen canciones,
-y usuarios estándar y premium., los dos heredan de usuario
-

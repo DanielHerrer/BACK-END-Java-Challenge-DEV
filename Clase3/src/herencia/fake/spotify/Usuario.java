@@ -1,20 +1,21 @@
 package herencia.fake.spotify;
+import java.util.ArrayList;
 
 public class Usuario extends FakeSpotify{
-    private String user;
-    private boolean ok;
+    private boolean confirmation;
 
-    public void logIn(String user){
-        this.user = user;
+    public boolean confirmation(String user){
+        if(!user.equals("Standart")) {
+            confirmation = false;
+        }
+        return confirmation;
     }
 
-    public boolean confirmation(){
-        if(user.equals("Standart")){
-            ok = false;
-        } else if(user.equals("Premium")){
-            ok = true;
+    public void listenSong(ArrayList<String> songs){
+        for(int i=0;i< songs.size();i++) {
+            System.out.println("Estas escuchando: "+songs.get(i));
+            System.out.println("-MOMENTO PUBLICITARIO-");
         }
-        return ok;
     }
 
 }
