@@ -28,7 +28,7 @@ public class Carga extends Vehiculo {
 
     @Override
     public String toString() {
-        return super.toString()+ "Carga{" +
+        return super.toString()+ "\n Carga{" +
                 "\n remolque=" + remolque +
                 "\n }";
     }

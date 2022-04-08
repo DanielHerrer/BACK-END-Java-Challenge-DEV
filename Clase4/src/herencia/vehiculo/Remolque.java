@@ -8,9 +8,9 @@ public class Remolque {
     }
 
     public String toString() {
-        return "Remolque{" +
-                "peso=" + peso + "kg" +
-                '}';
+        return "\nRemolque{" +
+                "\npeso=" + peso + "kg" +
+                "\n }";
     }
 
     public int getPeso() {

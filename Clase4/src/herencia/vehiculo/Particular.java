@@ -10,9 +10,9 @@ public class Particular extends Vehiculo {
 
     @Override
     public String toString() {
-        return super.toString()+ "Particular{" +
-                "numPuertas=" + numPuertas +
-                '}';
+        return super.toString()+ "\n Particular{" +
+                "\n numPuertas=" + numPuertas +
+                "\n }";
     }
 
     public int getNumPuertas() {
