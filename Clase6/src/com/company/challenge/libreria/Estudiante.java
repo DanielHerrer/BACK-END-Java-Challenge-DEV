@@ -1,4 +1,4 @@
-package com.company;
+package com.company.challenge.libreria;
 
 public class Estudiante extends Persona{
     private String curso;

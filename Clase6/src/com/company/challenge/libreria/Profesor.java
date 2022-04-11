@@ -1,4 +1,4 @@
-package com.company;
+package com.company.challenge.libreria;
 
 public class Profesor extends Empleado{
     private String departamento;

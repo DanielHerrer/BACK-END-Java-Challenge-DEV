@@ -1,4 +1,8 @@
-package com.company;
+package com.company.challenge;
+
+import com.company.challenge.libreria.Estudiante;
+import com.company.challenge.libreria.PersonalServicio;
+import com.company.challenge.libreria.Profesor;
 
 public class Main {
 
