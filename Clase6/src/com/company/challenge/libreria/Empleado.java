@@ -13,6 +13,7 @@ public class Empleado extends Persona{
         this.numDespacho = numDespacho;
     }
 
+    @Override
     public String toString() {
         return super.toString() + "Empleado{" + "\n" +
                 "AñoInicio= " + ageInicio + "\n" +

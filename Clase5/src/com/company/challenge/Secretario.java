@@ -1,8 +1,11 @@
-package com.company;
+package com.company.challenge;
 
 public class Secretario extends Empleado {
     private int numFax;
     private String despacho;
+
+    public Secretario(){
+    }
 
     public Secretario(String nombre, String apellido, String direccion, int dni, int antiguedad, int telefono, int salario, int numFax, String despacho) {
         super(nombre, apellido, direccion, dni, antiguedad, telefono, salario);
@@ -12,9 +15,9 @@ public class Secretario extends Empleado {
 
     @Override
     public String toString() {
-        return "Secretario{" +
-                "numFax=" + numFax +
-                ", despacho='" + despacho + '\'' +
-                '}';
+        return super.toString() + "Secretario{" + "\n" +
+                "Numero de Fax= " + numFax + "\n" +
+                "Despacho= " + despacho + "\n" +
+                '}' + "\n";
     }
 }

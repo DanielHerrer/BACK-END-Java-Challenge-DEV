@@ -1,6 +1,6 @@
 package com.company.challenge.libreria;
 
-public class Persona {
+abstract class Persona {
     private String nombre, apellido;
     private String estadoCivil;
     private int numId;
